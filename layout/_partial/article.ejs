@@ -12,7 +12,7 @@
         <% if (post.categories && post.categories.length){ %>
         <span class="book">
             <% post.categories.forEach(function(category, i){ %>
-                <a  data-rel="<%=category.name%>"><%=category.name%></a><% if (i !== post.categories.length - 1) { %>/<% } %>
+                <a  data-rel="<%=category.name%>"> <%=category.name%></a><% if (i !== post.categories.length - 1) { %>&nbsp;>&nbsp;<% } %>
             <% }) %>
         </span>
         <% } %>
@@ -26,7 +26,7 @@
     </div>
     <div class="article-meta">
         <% if (post.date){ %>
-        创建时间:<time class="date" title='更新时间: <%= date(post.updated, 'YYYY-MM-DD HH:mm:ss')%>'><%= date(post.date, 'YYYY-MM-DD HH:mm') %></time>
+        创建时间: <time class="date" title='更新时间: <%= date(post.updated, 'YYYY-MM-DD HH:mm:ss')%>'><%= date(post.date, 'YYYY-MM-DD HH:mm') %></time>
         <% } %>
     </div>
     <div class="article-meta">

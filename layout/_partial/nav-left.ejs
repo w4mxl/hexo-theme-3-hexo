@@ -41,19 +41,19 @@ if (theme.category && theme.category.sub) {
 
 %>
 <ul>
-    <li><div class="all active">全部文章<% if (theme.category && theme.category.num) { %><small>(<%=site.posts.length%>)</small><%}%></div></li>
+    <li><div class="all active">All <% if (theme.category && theme.category.num) { %><small> (<%=site.posts.length%>)</small><%}%></div></li>
     <% site.categories.forEach(function(category){ %>
         <% if (theme.category && theme.category.sub) { %>
             <% if(!category.parent) { %>
-            <li><div data-rel="<%=category.name%>"><% if (childCategory[category._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=category.name%><% if (theme.category && theme.category.num) { %><small>(<%= category.posts.length %>)</small><%}%></div>
+            <li><div data-rel="<%=category.name%>"><% if (childCategory[category._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=category.name%><% if (theme.category && theme.category.num) { %><small> (<%= category.posts.length %>)</small><%}%></div>
                 <% if (childCategory[category._id]) {%>
                     <ul class="sub hide">
                         <% childCategory[category._id].forEach(function (child) { %>
-                        <li><div data-rel="<%=child.name%>"><% if (childCategory[child._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=child.name%><% if (theme.category && theme.category.num) { %><small>(<%= child.posts.length %>)</small><%}%></div>
+                        <li><div data-rel="<%=child.name%>"><% if (childCategory[child._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=child.name%><% if (theme.category && theme.category.num) { %><small> (<%= child.posts.length %>)</small><%}%></div>
                             <% if (childCategory[child._id]) {%>
                                 <ul class="sub hide">
                                     <% childCategory[child._id].forEach(function (child2) { %>
-                                    <li><div data-rel="<%=child2.name%>"><% if (childCategory[child2._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=child2.name%><% if (theme.category && theme.category.num) { %><small>(<%= child2.posts.length %>)</small><%}%></div>
+                                    <li><div data-rel="<%=child2.name%>"><% if (childCategory[child2._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=child2.name%><% if (theme.category && theme.category.num) { %><small> (<%= child2.posts.length %>)</small><%}%></div>
                                     </li>
                                     <% }) %>
                                 </ul>
@@ -65,7 +65,7 @@ if (theme.category && theme.category.sub) {
             </li>
             <% } %>
         <% } else { %>
-            <li><div data-rel="<%=category.name%>"><%=category.name%><% if (theme.category && theme.category.num) { %><small>(<%= category.posts.length %>)</small><%}%></div></li>
+            <li><div data-rel="<%=category.name%>"><%=category.name%><% if (theme.category && theme.category.num) { %><small> (<%= category.posts.length %>)</small><%}%></div></li>
         <% } %>
     <% }) %>
 </ul>
